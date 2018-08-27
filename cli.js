@@ -13,7 +13,6 @@ const app = express();
 const apiProxy = httpProxy.createProxyServer();
 
 (async () => {
-  let ssl = await devcert.certificateFor('viasat.local');
   const { config } = explorer.searchSync() || {};
 
   if (!config) {
@@ -24,6 +23,7 @@ const apiProxy = httpProxy.createProxyServer();
   const port = isSecure ? 443 : 80;
   const hostName = config.domain || 'localhost.dev';
   const rules = Array.isArray(config.rules) ? config.rules : [];
+  const ssl = await devcert.certificateFor(hostName);
 
   rules.forEach(rule => {
     app.all(rule.path, (req, res) => {
