@@ -1,0 +1,19 @@
+{
+  "name": "secure-dev-server",
+  "version": "0.1.0",
+  "description": "",
+  "bin": "cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Sallar Kaboli <sallar.kaboli@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "cosmiconfig": "^5.0.6",
+    "devcert": "^1.0.0",
+    "express": "^4.16.3",
+    "http-proxy": "^1.17.0"
+  }
+}
