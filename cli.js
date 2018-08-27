@@ -43,5 +43,8 @@ const apiProxy = httpProxy.createProxyServer();
   console.log(
     'Serving on ' + chalk.green(`${isSecure ? 'https' : 'http'}://${hostName}`)
   );
-  (isSecure ? https : http).createServer(ssl, app).listen(port, hostName);
+  (isSecure ? https.createServer(ssl, app) : http.createServer(app)).listen(
+    port,
+    hostName
+  );
 })();
